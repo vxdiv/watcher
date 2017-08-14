@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/vxdiv/watcher.svg?branch=master)](https://travis-ci.org/vxdiv/watcher)
+[![codecov](https://codecov.io/gh/vxdiv/watcher/branch/master/graph/badge.svg)](https://codecov.io/gh/vxdiv/watcher)
 [![Go Report Card](https://goreportcard.com/badge/github.com/vxdiv/watcher)](https://goreportcard.com/report/github.com/vxdiv/watcher)
 
 # About
