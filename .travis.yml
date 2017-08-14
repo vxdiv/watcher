@@ -1,3 +1,4 @@
+
 language: go
 
 gobuild_args: -race
