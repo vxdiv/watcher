@@ -9,16 +9,19 @@ import (
 )
 
 type (
+	// CompositeKey is used to mark tasks
 	CompositeKey struct {
 		Index uint
 		Name  string
 	}
 
+	//JobFunc there is a task that performs an action in the background
 	JobFunc func()
 )
 
 var keyChain *hub
 
+// Run starts watcher in background
 func Run() {
 	keyChain = &hub{
 		storage:       make(storage),
@@ -30,16 +33,19 @@ func Run() {
 	go keyChain.run()
 }
 
+// Halt stops the watcher
 func Halt() {
 	close(keyChain.haltChannel)
 	<-keyChain.done
 	keyChain = nil
 }
 
+// Start registers a task that will be performed at the regular intervals
 func Start(job JobFunc, duration time.Duration, key CompositeKey) bool {
 	return keyChain.start(job, duration, key)
 }
 
+// Stop stops task by its CompositeKey
 func Stop(key CompositeKey) bool {
 	return keyChain.stop(key)
 }
