@@ -12,6 +12,9 @@ This package provides the ability to run background tasks that are performed at 
 
 ## Usage
 
+All tasks are marked by the specific composite key in order to enable the process stopping. You must run the watcher before tasks
+starting or stopping. Only single task can be run with the same composite key.
+
 ### Simple job
 ```go
 package main
